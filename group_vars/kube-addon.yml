@@ -2,27 +2,28 @@
 
 addon_images:
   # kubernetes dashboard
-  dashboard: gcr.io/google_containers/kubernetes-dashboard-amd64:v1.8.0
+  dashboard: registry.docker-cn.com/zw12078/kubernetes-dashboard-amd64:v1.8.0
   # Kube-dns
-  kubedns: gcr.io/google_containers/k8s-dns-kube-dns-amd64:1.14.7
-  dnsmasq: gcr.io/google_containers/k8s-dns-dnsmasq-nanny-amd64:1.14.7
-  sidecar: gcr.io/google_containers/k8s-dns-sidecar-amd64:1.14.7
+  kubedns: registry.docker-cn.com/zw12078/k8s-dns-kube-dns-amd64:1.14.7
+  dnsmasq: registry.docker-cn.com/zw12078/k8s-dns-dnsmasq-nanny-amd64:1.14.7
+  sidecar: registry.docker-cn.com/zw12078/k8s-dns-sidecar-amd64:1.14.7
   # Kubernetes monitor
-  heapster: gcr.io/google_containers/heapster-amd64:v1.5.0-beta.2
-  resizer: gcr.io/google_containers/addon-resizer:1.7
-  influxdb: gcr.io/google_containers/heapster-influxdb-amd64:v1.3.3
-  grafana: gcr.io/google_containers/heapster-grafana-amd64:v4.4.3
+  heapster: registry.docker-cn.com/zw12078/heapster-amd64:v1.5.0-beta.2
+  resizer: registry.docker-cn.com/zw12078/addon-resizer:1.7
+  influxdb: registry.docker-cn.com/zw12078/heapster-influxdb-amd64:v1.3.3
+  grafana: registry.docker-cn.com/zw12078/heapster-grafana-amd64:v4.4.3
   # Kubernetes logging
-  elasticsearch: gcr.io/google-containers/elasticsearch:v5.6.2
-  fluentd: gcr.io/google-containers/fluentd-elasticsearch:v2.0.2
-  kibana: docker.elastic.co/kibana/kibana:5.6.2
+  elasticsearch: registry.docker-cn.com/zw12078/elasticsearch:v5.6.2
+  elasticsearch_alpine: registry.docker-cn.com/zw12078/alpine:3.6
+  fluentd: registry.docker-cn.com/zw12078/fluentd-elasticsearch:v2.0.2
+  kibana: registry.docker-cn.com/zw12078/kibana:5.6.2
   # Ingress controller
-  nginx_ingress: quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.9.0
-  default_backend: gcr.io/google_containers/defaultbackend:1.4
+  nginx_ingress: registry.docker-cn.com/zw12078/nginx-ingress-controller:0.9.0
+  default_backend: registry.docker-cn.com/zw12078/defaultbackend:1.4
   traefik: traefik:v1.5-alpine
   # Kube-proxy
-  kube_proxy: "gcr.io/google_containers/kube-proxy-amd64:v{{ kube_version }}"
-  
+  kube_proxy: "registry.docker-cn.com/zw12078/kube-proxy-amd64:v{{ kube_version }}"
+
 # Kube-addons resources
 num_nodes: "{{ groups['kube-cluster'] | length }}"
 base_metrics_memory: 140Mi

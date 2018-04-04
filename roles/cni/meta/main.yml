@@ -1,0 +1,2 @@
+dependencies:
+  - { role: commons/container-images, when: cri_plugin =='docker',    pre_pull: false }

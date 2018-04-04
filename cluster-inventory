@@ -1,0 +1,28 @@
+192.168.16.232 ansible_user=root ansible_password=123456  
+192.168.16.233 ansible_user=root ansible_password=123456  
+192.168.16.234 ansible_user=root ansible_password=123456  
+192.168.16.235 ansible_user=root ansible_password=123456  
+192.168.16.236 ansible_user=root ansible_password=123456
+192.168.16.237 ansible_user=root ansible_password=123456
+192.168.16.238 ansible_user=root ansible_password=123456
+192.168.16.239 ansible_user=root ansible_password=123456
+192.168.16.240 ansible_user=root ansible_password=123456
+192.168.16.241 ansible_user=root ansible_password=123456
+192.168.16.242 ansible_user=root ansible_password=123456
+192.168.16.243 ansible_user=root ansible_password=123456
+
+[etcds]
+192.168.16.238
+
+[masters]
+192.168.16.238
+
+[nodes]
+192.168.16.2[39:40]
+
+[kube-cluster:children]
+masters
+nodes
+
+[kube-addon:children]
+masters

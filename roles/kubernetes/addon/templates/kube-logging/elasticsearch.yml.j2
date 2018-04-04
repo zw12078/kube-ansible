@@ -40,8 +40,8 @@ spec:
         key: node-role.kubernetes.io/master
       serviceAccountName: elasticsearch-logging
       initContainers:
-      - name: elasticsearch-logging-init
-        image: alpine:3.6
+      - name: elasticsearch-logging-init 
+        image: {{ addon_images.elasticsearch_alpine }}
         command: ["/sbin/sysctl", "-w", "vm.max_map_count={{ logging.elasticsearch.max_map_count }}"]
         securityContext:
           privileged: true

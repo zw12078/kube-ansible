@@ -54,8 +54,8 @@ spec:
         key: node-role.kubernetes.io/master
       serviceAccountName: calico-cni-plugin
       containers:
-      - name: calico-node
-        image: quay.io/calico/node:v2.6.2
+      - name: {{ images.calico.name }}
+        image: {{ images.calico.repos }}:{{ images.calico.tag }}
         env:
           - name: CLUSTER_TYPE
             value: "k8s,bgp"
@@ -115,7 +115,7 @@ spec:
             mountPath: {{ etcd.dir.ssl }}
             readOnly: true
       - name: install-cni
-        image: quay.io/calico/cni:v1.11.0
+        image: {{ images.calico.repos }}:{{ images.calico.tag }}
         command: ["/install-cni.sh"]
         env:
           - name: ETCD_ENDPOINTS
